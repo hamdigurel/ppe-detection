@@ -1,0 +1,15 @@
+# Özelleştirilmiş ByteTrack konfigürasyonu.
+# Varsayılan Ultralytics ayarlarına göre track_buffer artırılmıştır.
+# Bu sayede kişi birkaç saniye boyunca (örn. başka bir nesnenin arkasında kalırsa,
+# ya da modelin o karelerde onu bulamamasi durumunda) kaybolsa bile,
+# tekrar göründüğünde AYNI ID ile eşleştirilme ihtimali artar.
+# Farklı sahne/video tiplerinde (yoğun/az kalabalık, farklı kamera açısı) bu değer
+# esneklik saglar.
+
+tracker_type: bytetrack
+track_high_thresh: 0.5      # yüksek güvenli tespitleri track'e baglamak icin esik
+track_low_thresh: 0.1       # düşük güvenli tespitleri de ikinci pass'te degerlendirir (oklüzyon toleransı)
+new_track_thresh: 0.6       # yeni bir track (yeni ID) acmak icin gereken minimum guven
+track_buffer: 60            # bir track kaybolunca kac kare boyunca "canli" tutulacagi (varsayilan 30'dan artirildi)
+match_thresh: 0.8           # eslestirme icin IoU esigi
+fuse_score: True
