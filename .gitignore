@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Sanal ortam
+venv/
+.venv/
+env/
+ENV/
+
+# YOLO model ağırlıkları (büyük binary'ler)
+*.pt
+
+# Video ve medya dosyaları
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.wmv
+
+# Üretilen çıktılar (eğitim/prediction çıktıları, sonuç videoları)
+outputs/
+runs/
+
+# Veri önbellekleri
+*.cache
+*.npy
+
+# Roboflow veri seti (tekrar indirilebilir — README.roboflow.txt'ye bakın)
+train/
+valid/
+test/
+
+# Loglar
+*.log
