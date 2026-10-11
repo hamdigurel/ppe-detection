@@ -13,6 +13,21 @@ A video-based **Personal Protective Equipment (PPE) compliance system**. It trac
 - **Violation logging** to `outputs/violations.json`, with a cropped screenshot of the person for each event
 - Annotated output video with per-person status and an info panel
 
+## Results
+
+Custom PPE model: **YOLOv8n**, trained for 50 epochs at 640 px on **~22,100 images** (19,533 train / 1,700 validation / 878 test).
+
+| Class | mAP@0.5 |
+|---|---|
+| no_helmet | 0.962 |
+| vest | 0.986 |
+| no_vest | 0.782 |
+| helmet | 0.583 |
+| person | 0.488 |
+| **All classes** | **0.761** |
+
+The full pipeline (person tracking + PPE detection) runs at **~55–70 FPS on a GPU** in the demo videos.
+
 ## How it works
 
 ```
